@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <style>
+        body {
+            font-family: Arial Narrow Bold, sans-serif;
+            background-color: #b4e9ee;
+            margin: 8px;
+            padding: 8px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        input {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        form {
+            background-color: #69acb2;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        label {
+            margin: 8px;
+        }
+
+    </style>
+
+    <script>
+        
+
+    </script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cifra de Cesar</title>
+    </head>
+
+    <body>
+        <h1>Cifra de Cesar</h1>
+        <form action="cifra.php" method="post">
+            <label for="mensagem">Mensagem:</label>
+            <input type="text" name="mensagem" id="mensagem" required>
+            <br>
+
+            <label for="chave">Chave:</label>
+            <input type="number" name="chave" id="chave" required>
+            <br>
+
+            <input type="submit" value="Cifrar">
+            <input type="submit" value="Decifrar">
+        </form>
+        
+    </body>
+</html>
