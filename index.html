@@ -3,34 +3,94 @@
     <style>
         body {
             font-family: Arial Narrow Bold, sans-serif;
-            background-color: #b4e9ee;
-            margin: 8px;
-            padding: 8px;
+            background-image: linear-gradient(to top, #171919 0%, #2b6472 50%, #063a42 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 20px;
+            padding: 20px;
             align-items: center;
             justify-items: center;
         }
 
-        input {
-            border-radius: 10px;
-            margin-bottom: 10px;
-            padding: 8px;
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: #dddddd;
+            text-shadow: 0 1px #fff;
         }
 
         form {
-            background-color: #69acb2;
+            background-image: linear-gradient(to top, #caeff5 0%, #b0c5ca 50%, #92eaf7 100%);
             border-radius: 10px;
-            padding: 8px;
+            padding: 40px;
             margin: 8px;
         }
 
         label {
-            margin: 8px;
+            margin: 12px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 6px;
+            background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+            border-radius: 30px;
+            border: 1px solid #8F9092;
+            transition: all 0.2s ease;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #606060;
+            text-shadow: 0 1px #fff;
+        }
+
+        input:hover {
+            box-shadow: 0 2px 2px 1px #FCFCFC, 0 4px 6px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+        }
+
+        input:active {
+            box-shadow: 0 2px 2px 1px #FCFCFC, 0 4px 6px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        }
+
+        input:focus {
+            box-shadow: 0 2px 2px 1px #FCFCFC, 0 4px 6px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        }
+ 
+        button {
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        cursor: pointer;
+        width: 100px;
+        height: 40px;
+        background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+        border-radius: 30px;
+        border: 1px solid #8F9092;
+        transition: all 0.2s ease;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #606060;
+        text-shadow: 0 1px #fff;
+        }
+
+        button:hover {
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+        }
+
+        button:active {
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        }
+
+        button:focus {
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
         }
 
     </style>
 
     <script>
-        
+
 
     </script>
 
@@ -51,8 +111,8 @@
             <input type="number" name="chave" id="chave" required>
             <br>
 
-            <input type="submit" value="Cifrar">
-            <input type="submit" value="Decifrar">
+            <button type="submit" value="Cifrar">Cifrar</button>
+            <button type="submit" value="Decifrar">Decifrar</button>
         </form>
         
     </body>
