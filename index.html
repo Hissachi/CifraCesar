@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <style>
         body {
-            font-family: Arial Narrow Bold, sans-serif;
+            font-family: "Source Sans Pro", sans-serif;
             background-image: linear-gradient(to top, #171919 0%, #2b6472 50%, #063a42 100%);
             background-size: cover;
             background-repeat: no-repeat;
@@ -14,6 +14,7 @@
         }
 
         h1 {
+            font-family: "Source Sans Pro", sans-serif;
             text-align: center;
             font-size: 40px;
             color: #dddddd;
@@ -28,6 +29,7 @@
         }
 
         label {
+            font-family: "Source Sans Pro", sans-serif;
             margin: 12px;
         }
 
@@ -43,6 +45,12 @@
             font-weight: 600;
             color: #606060;
             text-shadow: 0 1px #fff;
+        }
+
+        div {
+            margin: 8px;
+            padding: 8px;
+            color: #caeff5;
         }
 
         input:hover {
@@ -62,7 +70,7 @@
         justify-content: center;
         outline: none;
         cursor: pointer;
-        width: 100px;
+        width: 150px;
         height: 40px;
         background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
         border-radius: 30px;
@@ -90,8 +98,41 @@
     </style>
 
     <script>
-
-
+        function criptografar() {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz"
+            let mensagemFinal = ""
+            let mensagem = document.getElementById("mensagem").value
+            for(i = 0; i < mensagem.length ; i++) {
+                if(alfabeto.indexOf(mensagem[i]) !== -1) {
+                    x = alfabeto.indexOf(mensagem[i])
+                    y = alfabeto[Math.abs((x + 3) % alfabeto.length)]
+                    mensagemFinal += y
+                }
+                else {
+                    mensagemFinal += mensagem[i]
+                }
+            }
+            document.getElementById("MensagemFinal").innerHTML = mensagem + " = " + mensagemFinal
+        }
+        function descriptografar() {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz"
+            let mensagemFinal = ""
+            let mensagem = document.getElementById("mensagem").value
+            for(i = 0; i < mensagem.length ; i++)
+            {
+                if(alfabeto.indexOf(mensagem[i]) !== -1)
+                {
+                    x = alfabeto.indexOf(mensagem[i])
+                    y = alfabeto[Math.abs((x - 3) % alphabet.length)]
+                    mensagemFinal += y
+                }
+                else
+                {
+                    mensagemFinal += mensagem[i]
+                }
+            }
+            document.getElementById("MensagemFinal").innerHTML = mensagem + " = " + mensagemFinal
+        }
     </script>
 
     <head>
@@ -102,18 +143,18 @@
 
     <body>
         <h1>Cifra de Cesar</h1>
-        <form action="cifra.php" method="post">
+        <form method="post">
             <label for="mensagem">Mensagem:</label>
-            <input type="text" name="mensagem" id="mensagem" required>
+            <input type="text" id="mensagem" maxlength="100" placeholder="Máx. 100 caracteres" required>
             <br>
 
             <label for="chave">Chave:</label>
-            <input type="number" name="chave" id="chave" required>
+            <input type="number" id="chave" min="1" max="25" placeholder="1-25" required>
             <br>
 
-            <button type="submit" value="Cifrar">Cifrar</button>
-            <button type="submit" value="Decifrar">Decifrar</button>
+            <button onclick="criptografar">Criptografar</button>
+            <button onclick="descriptografar">Descriptografar</button>
         </form>
-        
+        <div id="MensagemFinal">Resultado: </div>
     </body>
 </html>
